@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'interview-frontend';
+  searchResults: any[] = []; // Assuming searchResults is an array of any type
+
+  onSearchCity(cityName: string) {
+    console.log('Received city name from child component:', cityName);
+    // Perform any other actions with the emitted data here.
+  }
+ 
 }
