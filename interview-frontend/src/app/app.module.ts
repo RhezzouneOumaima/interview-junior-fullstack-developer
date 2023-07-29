@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CitySearchFormComponent } from './city-search-form/city-search-form.component';
 import { CityResultsListComponent } from './city-results-list/city-results-list.component';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

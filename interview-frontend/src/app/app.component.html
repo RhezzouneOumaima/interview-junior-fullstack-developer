@@ -1,11 +1,20 @@
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
+<form (submit)="searchCity()">
+  <input [(ngModel)]="searchTerm" name="cityName" placeholder="Enter city name" />
+  <button type="submit">Search</button>
+</form>
 
+<div *ngIf="searched">
+  <table border="2">
+    <tr>
+      <td>ID</td>
+      <td>NAME</td>
+      <td>COUNT</td>
+    </tr>
+  <tr>
+    <td *ngFor="let city of cities">
+      {{ city }}
+    </td>
+  </tr>
+</table>
+  <p *ngIf="cities.length === 0">No matching cities found.</p>
 </div>
-
-<router-outlet>
-
-  <app-city-search-form (searchCity)="onSearchCity($event)"></app-city-search-form>
-  <app-city-results-list [cities]="searchResults"></app-city-results-list>
-
-</router-outlet>
